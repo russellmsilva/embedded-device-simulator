@@ -4,7 +4,7 @@
 Simulator::Simulator()
     : tempDrift_(0.0f),
       pressureDrift_(0.0f),
-      motionBias_ (0.0f),
+      motionDrift_ (0.0f),
       startTime_(std::chrono::steady_clock::now())
 {}
 
@@ -52,11 +52,11 @@ SensorReading Simulator::generatePressure() {
 SensorReading Simulator::generateMotion() {
     float base = 0.0f;                        // baseline m/s^2
     float noise = randomFloat(-0.1f, 0.1f);
-    motionBias_ += randomFloat(-0.02f, 0.02f);
+    motionDrift_ += randomFloat(-0.02f, 0.02f);
 
     return {
         SensorType::Motion,
-        base + noise + motionBias_,
+        base + noise + motionDrift_,
         now()
     };
 }

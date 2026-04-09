@@ -38,7 +38,7 @@ private:
     // Interal state for drift simulation
     float tempDrift_;
     float pressureDrift_;
-    float motionBias_;
+    float motionDrift_;
 
     // Internal timestamp representing time of Simulator instance creation
     std::chrono::steady_clock::time_point startTime_;
