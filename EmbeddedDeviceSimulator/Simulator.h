@@ -2,6 +2,7 @@
 
 #include <cstdint>
 #include <vector>
+#include <chrono>
 
 enum class SensorType : uint8_t {
     Temperature,
@@ -12,7 +13,7 @@ enum class SensorType : uint8_t {
 struct SensorReading {
     SensorType type;
     float value;          // e.g., degrees Celsius, kPa, m/s^2 depending on sensor
-    uint64_t timestamp;   // microseconds or milliseconds since start
+    uint64_t timestamp;   // milliseconds since the Simulator instance was created
 };
 
 class Simulator {
@@ -38,4 +39,7 @@ private:
     float tempDrift_;
     float pressureDrift_;
     float motionBias_;
+
+    // Internal timestamp representing time of Simulator instance creation
+    std::chrono::steady_clock::time_point startTime_;
 };

@@ -1,11 +1,11 @@
 #include "Simulator.h"
 #include <random>
-#include <chrono>
 
 Simulator::Simulator()
     : tempDrift_(0.0f),
       pressureDrift_(0.0f),
-      motionBias_ (0.0f)
+      motionBias_ (0.0f),
+      startTime_(std::chrono::steady_clock::now())
 {}
 
 // Internal Helpers
@@ -19,7 +19,7 @@ float Simulator::randomFloat(float min, float max) {
 uint64_t Simulator::now() {
     using namespace std::chrono;
     return duration_cast<milliseconds>(
-        steady_clock::now().time_since_epoch()
+        steady_clock::now() - startTime_
     ).count();
 }
 

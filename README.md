@@ -63,7 +63,7 @@ struct SensorReading {
 
 - `type` → Sensor category
 - `value` → Simulated measurement
-- `timestamp` → Time since program start (milliseconds)
+- `timestamp` → Time in milliseconds since the simulator instance was created
 
 ## Usage
 
