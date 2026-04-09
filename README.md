@@ -10,8 +10,6 @@ This project is intended to support:
 - Algorithm testing under controlled conditions
 - Prototyping and validation of embedded systems
 
----
-
 ## Features
 
 - Simulates multiple sensor types:
@@ -29,8 +27,6 @@ This project is intended to support:
 
 - Lightweight and dependency-free (standard C++ only)
 
----
-
 ## Project Structure
 
 ```
@@ -38,8 +34,6 @@ This project is intended to support:
 ├── Simulator.h    # Class definition and data structures
 └── Simulator.cpp  # Implementation of simulation logic
 ```
-
----
 
 ## Data Model
 
@@ -71,8 +65,6 @@ struct SensorReading {
 - `value` → Simulated measurement
 - `timestamp` → Time since program start (milliseconds)
 
----
-
 ## Usage
 
 ### 1. Include the Simulator
@@ -81,15 +73,11 @@ struct SensorReading {
 #include "Simulator.h"
 ```
 
----
-
 ### 2. Create an Instance
 
 ```cpp
 Simulator sim;
 ```
-
----
 
 ### 3. Generate Single Readings
 
@@ -98,8 +86,6 @@ auto temp = sim.generateTemperature();
 auto pressure = sim.generatePressure();
 auto motion = sim.generateMotion();
 ```
-
----
 
 ### 4. Generate Data Streams
 
@@ -110,8 +96,6 @@ auto motionStream = sim.generateMotionStream(100);
 ```
 
 Each function returns a `std::vector<SensorReading>`.
-
----
 
 ## Build Instructions
 
@@ -127,8 +111,6 @@ You can open and build the project directly using the provided `.sln` (solution)
 
 While Visual Studio is the primary development environment, you can try building the project using other tools such as **CMake** or **g++**.
 
----
-
 ## Thread Safety
 
 The current implementation is **not thread-safe**.
@@ -137,8 +119,6 @@ The current implementation is **not thread-safe**.
 - Concurrent access from multiple threads may lead to undefined behavior
 
 If multithreading is required, external synchronization must be applied.
-
----
 
 ## Example Usage
 
