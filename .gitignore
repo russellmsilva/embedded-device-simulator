@@ -1,0 +1,31 @@
+# Visual Studio
+.vs/
+*.VC.db
+*.VC.opendb
+
+# Build results
+Debug/
+Release/
+x64/
+x86/
+out/
+build/
+
+# CMake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+
+# Logs
+*.log
+
+# User-specific files
+*.user
+*.suo
+
+# IntelliSense
+ipch/
+
+# OS files
+.DS_Store
+Thumbs.db
